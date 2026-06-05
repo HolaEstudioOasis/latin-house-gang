@@ -108,7 +108,7 @@ const releases = [
   // "Perfect Alibi" eliminado del catálogo
 ];
 
-// Eventos en Toluca eliminados hasta tener fechas reales confirmadas
+// Eventos anteriores eliminados hasta tener fechas reales confirmadas
 const eventos = [
   {
     id: "evento-1",
@@ -246,7 +246,7 @@ const blogPosts = [
   { category: "EVENTO", date: "Abril 2025", title: "RECAP: LHG SHOWCASE EN TOLUCA", excerpt: "Más de 400 personas en una noche que definió el sonido del label. Fotos, videos y lo que viene.", color: "#CC2020" },
   { category: "MIX", date: "Marzo 2025", title: "LHG PODCAST 001 · GAMA", excerpt: "Una hora sin concesiones. Gama abre la serie de mixes exclusivos del sello.", color: "#1A6B6B" },
   { category: "NOTICIA", date: "Febrero 2025", title: "LATIN HOUSE GANG VOL.4 YA DISPONIBLE", excerpt: "La cuarta entrega de la compilación insignia del sello. 10 tracks, 8 artistas, un solo sonido.", color: "#CC2020" },
-  { category: "EVENTO", date: "Enero 2025", title: "PRIMERA FECHA EN CDMX — 26 JULIO · EL BUNKER", excerpt: "Latin House Gang sale de Toluca. Minow y Gama presentarán material nuevo en el Bunker CDMX.", color: "#5C2D8A" }
+  { category: "EVENTO", date: "Enero 2025", title: "PRIMERA FECHA EN CDMX — 26 JULIO · EL BUNKER", excerpt: "Latin House Gang llega a CDMX. Minow y Gama presentarán material nuevo en el Bunker.", color: "#5C2D8A" }
 ];
 
 function renderBlog(containerId) {
