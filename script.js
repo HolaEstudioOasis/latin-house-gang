@@ -85,13 +85,13 @@ const releases = [
     catalog: "LHG #026", title: "Ciempiés", artist: "Paskman", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s-single/1884037374",
-    spotifyUrl: null
+    spotifyUrl: "https://open.spotify.com/intl-es/album/64lEVztoenFon4IPHRR4Pp"
   },
   {
     catalog: "LHG #025", title: "Lover", artist: "Bautista", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/7a/32/747a3273-994d-0989-40bf-e2f7867668d1/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/lover-single/1874009473",
-    spotifyUrl: null
+    spotifyUrl: "https://open.spotify.com/intl-es/album/0cIk6DGPJ4rXRcZeIO7yUE"
   },
   {
     catalog: "LHG #024", title: "Diabolica", artist: "Kofla · Rob Session · Marin", year: "2026",
