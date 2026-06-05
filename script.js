@@ -1,19 +1,113 @@
 // ─── SOCIAL LINKS ───────────────────────────────────────
-const LHG_SPOTIFY  = "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H";
+const LHG_SPOTIFY   = "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H";
 const LHG_INSTAGRAM = "https://www.instagram.com/latinhousegangmusic/";
-const BAUTISTA_SPOTIFY  = "https://open.spotify.com/intl-es/artist/5oryDmGJCySSpMFY9YUeb1";
-const MICHAEL_SPOTIFY   = "https://open.spotify.com/intl-es/artist/6RY7vqzR938x0DE0Eh6srl";
 
-// ─── DATA ───────────────────────────────────────────────
+// ─── ARTISTS ────────────────────────────────────────────
+const artists = [
+  { name: "MichaelBM",      aliases: ["Michael"],
+    instagram: "https://www.instagram.com/michaelbmmusic/",
+    spotify:   "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H",
+    apple:     "https://music.apple.com/mx/artist/michaelbm/1016031177" },
+  { name: "Bautista",       aliases: [],
+    instagram: "https://www.instagram.com/bautista.wav/",
+    spotify:   "https://open.spotify.com/intl-es/artist/5oryDmGJCySSpMFY9YUeb1",
+    apple:     "https://music.apple.com/mx/artist/bautista/1533307995" },
+  { name: "Cele Arrabal",   aliases: [],
+    instagram: null,
+    spotify:   "https://open.spotify.com/intl-es/artist/6RY7vqzR938x0DE0Eh6srl",
+    apple:     "https://music.apple.com/mx/artist/cele-arrabal/1515168401" },
+  { name: "Paskman",        aliases: [],
+    instagram: null,
+    spotify:   "https://open.spotify.com/intl-es/artist/53WBL9mWs6KRVyrWBB6Fen",
+    apple:     "https://music.apple.com/mx/artist/paskman/1449989316" },
+  { name: "Minow",          aliases: [],
+    instagram: "https://www.instagram.com/minowmusic/",
+    spotify:   "https://open.spotify.com/intl-es/artist/4z5hE5cqCfTsCZ60IVAgRC",
+    apple:     "https://music.apple.com/mx/artist/minow/1041611713" },
+  { name: "Boltron",        aliases: [],
+    instagram: "https://www.instagram.com/boltronmusic/",
+    spotify:   "https://open.spotify.com/intl-es/artist/4yiUOYE4qfKINbGjeePqiG",
+    apple:     "https://music.apple.com/mx/artist/boltron/1535833423" },
+  { name: "Gama",           aliases: [],
+    instagram: "https://www.instagram.com/gamamusicmx/",
+    spotify:   "https://open.spotify.com/intl-es/artist/36GC5ob1mWpu07UpvMAYnl",
+    apple:     "https://music.apple.com/mx/artist/gama/193501778" },
+  { name: "House Music Bro",aliases: [],
+    instagram: "https://www.instagram.com/housemusicbro/",
+    spotify:   "https://open.spotify.com/intl-es/artist/70s7RdFqr3UEBlooMGUQdO",
+    apple:     "https://music.apple.com/mx/artist/house-music-bro/1527524092" }
+];
+
+// Build lookup map (name + aliases)
+const artistMap = {};
+artists.forEach(a => {
+  artistMap[a.name] = a;
+  a.aliases.forEach(alias => { artistMap[alias] = a; });
+});
+
+function getArtistLink(name, type) {
+  const a = artistMap[name];
+  if (!a) return null;
+  const val = a[type];
+  return (val && val !== '#') ? val : null;
+}
+
+// ─── DATA — RELEASES ────────────────────────────────────
 const releases = [
-  { id: "r1", catalog: "LHG #027", title: "CIEMPIÉS", artist: "Paskman", year: "2025", genre: "Latin House", color: "#E8650A", listenUrl: LHG_SPOTIFY },
-  { id: "r2", catalog: "LHG #025", title: "LOVER", artist: "Bautista", year: "2025", genre: "Deep House", color: "#7AB3D4", listenUrl: BAUTISTA_SPOTIFY },
-  { id: "r3", catalog: "LHG #024", title: "LATIN HOUSE GANG VOL.4", artist: "Various Artists", year: "2024", genre: "Compilation", color: "#CC2020", listenUrl: LHG_SPOTIFY },
-  { id: "r4", catalog: "LHG #023", title: "FUEGO PROFUNDO", artist: "Michael", year: "2024", genre: "Latin House", color: "#D4A017", listenUrl: MICHAEL_SPOTIFY },
-  { id: "r5", catalog: "LHG #022", title: "ARRABAL NIGHTS", artist: "Cele Arrabal", year: "2024", genre: "Afro House", color: "#2A7A2A", listenUrl: LHG_SPOTIFY },
-  { id: "r6", catalog: "LHG #021", title: "SUBTERRÁNEO EP", artist: "Minow", year: "2024", genre: "Deep House", color: "#5C2D8A", listenUrl: LHG_SPOTIFY },
-  { id: "r7", catalog: "LHG #020", title: "CUMBIA 3000", artist: "Boltron", year: "2023", genre: "Cumbia Electrónica", color: "#C45C00", listenUrl: LHG_SPOTIFY },
-  { id: "r8", catalog: "LHG #019", title: "GAMMA RAYS", artist: "Gama", year: "2023", genre: "Tech House", color: "#1A6B6B", listenUrl: LHG_SPOTIFY }
+  {
+    catalog: "LHG #028", title: "Latin House Gang Vol.4", artist: "Various Artists", year: "2026",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/4f/a5/e94fa523-1a34-89e4-95ef-2a78269ed494/cover.jpg/600x600bf-60.jpg",
+    appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-4/1889233062",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/4yBJXYf5bAcrxcrYYgJBq0"
+  },
+  {
+    catalog: "LHG #027", title: "Ciempiés", artist: "Paskman", year: "2026",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
+    appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s-single/1884037374",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #026", title: "Perfect Alibi", artist: "Latin House Gang", year: "2026",
+    coverUrl: null, color: "#1A3A5C",
+    appleUrl: "https://music.apple.com/mx/album/perfect-alibi-single/1886864199",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #025", title: "Lover", artist: "Bautista", year: "2026",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/7a/32/747a3273-994d-0989-40bf-e2f7867668d1/cover.jpg/600x600bf-60.jpg",
+    appleUrl: "https://music.apple.com/mx/album/lover-single/1874009473",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #024", title: "Diabolica", artist: "Kofla, Rob Session, Marin", year: "2026",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/90/49/15/9049153d-a5d7-5f16-7c5c-60dcff61afaf/cover.jpg/600x600bf-60.jpg",
+    appleUrl: "https://music.apple.com/mx/album/diabolica-single/1859209334",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #023", title: "Britney", artist: "Latin House Gang", year: "2026",
+    coverUrl: null, color: "#CC2020",
+    appleUrl: "https://music.apple.com/mx/album/britney-single/1886458544",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #022", title: "Latin House Gang Vol.3", artist: "Various Artists", year: "2025",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/33/34/48333404-8fe5-8acd-be8b-881129bef7c9/cover.jpg/600x600bf-60.jpg",
+    appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-3/1848993532",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/65WNZY2whziZrGu3KOSump"
+  },
+  {
+    catalog: "LHG #021", title: "Coco", artist: "Latin House Gang", year: "2025",
+    coverUrl: null, color: "#1A6B6B",
+    appleUrl: "https://music.apple.com/mx/album/coco-single/1849441952",
+    spotifyUrl: null
+  },
+  {
+    catalog: "LHG #020", title: "Loca del Flow", artist: "Latin House Gang", year: "2025",
+    coverUrl: null, color: "#5C2D8A",
+    appleUrl: "https://music.apple.com/mx/album/loca-del-flow-single/1849439357",
+    spotifyUrl: null
+  }
 ];
 
 const eventos = [
@@ -28,10 +122,6 @@ const eventos = [
       "Michael": "https://www.instagram.com/michaelbmmusic/",
       "Cele Arrabal": "https://www.instagram.com/cele.arrabal/",
       "Bautista": "https://www.instagram.com/bautista.wav/"
-    },
-    spotifyArtistas: {
-      "Michael": MICHAEL_SPOTIFY,
-      "Bautista": BAUTISTA_SPOTIFY
     },
     lineup: ["Michael", "Cele Arrabal", "Bautista"],
     tickets: [
@@ -88,10 +178,6 @@ const eventos = [
       "Gama": "https://www.instagram.com/gamamusicmx/",
       "Minow": "https://www.instagram.com/minowmusic/"
     },
-    spotifyArtistas: {
-      "Michael": MICHAEL_SPOTIFY,
-      "Bautista": BAUTISTA_SPOTIFY
-    },
     lineup: ["Michael", "Bautista", "Gama", "Minow"],
     tickets: [
       { tipo: "PREVENTA", descripcion: "Precio de preventa", precio: 320 },
@@ -129,10 +215,6 @@ const eventos = [
       "Boltron": "https://www.instagram.com/boltronmusic/",
       "Gama": "https://www.instagram.com/gamamusicmx/",
       "Cele Arrabal": "https://www.instagram.com/cele.arrabal/"
-    },
-    spotifyArtistas: {
-      "Michael": MICHAEL_SPOTIFY,
-      "Bautista": BAUTISTA_SPOTIFY
     },
     lineup: ["Michael", "Bautista", "Minow", "Boltron", "Gama", "Cele Arrabal"],
     tickets: [
@@ -209,23 +291,38 @@ function renderReleases(containerId, limit) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const list = limit ? releases.slice(0, limit) : releases;
-  container.innerHTML = list.map(r => `
-    <a class="release-card" href="${r.listenUrl}" target="_blank" rel="noopener">
-      <div class="release-cover-wrap">
-        <div class="release-cover" style="background-color:${r.color}">
-          <span class="cover-letter">${r.title.charAt(0)}</span>
+  container.innerHTML = list.map(r => {
+    const coverHtml = r.coverUrl
+      ? `<img src="${r.coverUrl}" alt="${r.title}" loading="lazy" class="release-cover-img">`
+      : `<div class="release-cover-placeholder" style="background-color:${r.color || '#333'}">
+           <span class="cover-letter">${r.title.charAt(0)}</span>
+         </div>`;
+
+    const spBtn = r.spotifyUrl
+      ? `<a href="${r.spotifyUrl}" target="_blank" rel="noopener" class="overlay-btn overlay-btn-spotify" onclick="event.stopPropagation()">
+           <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+           SPOTIFY
+         </a>` : '';
+
+    return `
+      <div class="release-card" onclick="window.open('${r.appleUrl}','_blank')" role="button" tabindex="0">
+        <div class="release-cover-wrap">
+          ${coverHtml}
+          <div class="release-cover-overlay" onclick="event.stopPropagation()">
+            <a href="${r.appleUrl}" target="_blank" rel="noopener" class="overlay-btn overlay-btn-apple">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              APPLE MUSIC
+            </a>
+            ${spBtn}
+          </div>
         </div>
-        <div class="release-cover-overlay">
-          <span class="overlay-btn">ESCUCHAR</span>
+        <div class="release-info">
+          <div class="release-catalog">${r.catalog}</div>
+          <div class="release-title">${r.title}</div>
+          <div class="release-artist">${r.artist}</div>
         </div>
-      </div>
-      <div class="release-info">
-        <div class="release-catalog">${r.catalog}</div>
-        <div class="release-title">${r.title}</div>
-        <div class="release-artist">${r.artist}</div>
-      </div>
-    </a>
-  `).join('');
+      </div>`;
+  }).join('');
 }
 
 // ─── BLOG GRID ──────────────────────────────────────────
@@ -514,17 +611,21 @@ function initEventoDetalle() {
   const lineupGrid = document.querySelector('.lineup-grid');
   if (lineupGrid) {
     lineupGrid.innerHTML = evento.lineup.map(a => {
-      const igUrl  = (evento.instagramArtistas && evento.instagramArtistas[a]) || null;
-      const spUrl  = (evento.spotifyArtistas  && evento.spotifyArtistas[a])  || null;
+      const igUrl = getArtistLink(a, 'instagram');
+      const spUrl = getArtistLink(a, 'spotify');
+      const apUrl = getArtistLink(a, 'apple');
+      const mainUrl = spUrl || apUrl || igUrl || '#';
       const socialIcons = [
         igUrl ? `<a href="${igUrl}" target="_blank" rel="noopener" aria-label="Instagram" class="artista-social-link" onclick="event.stopPropagation()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
         </a>` : '',
         spUrl ? `<a href="${spUrl}" target="_blank" rel="noopener" aria-label="Spotify" class="artista-social-link" onclick="event.stopPropagation()">
           ${SPOTIFY_SVG}
+        </a>` : '',
+        apUrl ? `<a href="${apUrl}" target="_blank" rel="noopener" aria-label="Apple Music" class="artista-social-link" onclick="event.stopPropagation()">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         </a>` : ''
       ].join('');
-      const mainUrl = spUrl || igUrl || '#';
       return `
         <a class="artista-card" href="${mainUrl}" target="_blank" rel="noopener" style="text-decoration:none">
           <div class="artista-avatar">
@@ -545,10 +646,9 @@ function initEventoDetalle() {
 }
 
 // ─── INIT ────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   initNavbar();
-  renderReleases('releasesGrid', null);
-  renderReleases('releasesGridHome', 8);
+  renderReleases('releasesGridHome', 9);  // home: todos los releases
   renderBlog('blogGrid');
   renderEventos('eventosListHome', 3);
   renderEventos('eventosListPage', null);
@@ -559,6 +659,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendario();
   initSubmitForm();
 
-  const isDetalle = document.querySelector('.evento-detalle-flyer');
-  if (isDetalle) initEventoDetalle();
-});
+  if (document.querySelector('.evento-detalle-flyer')) initEventoDetalle();
+}
+
+// Funciona tanto si el script carga antes como después del DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
