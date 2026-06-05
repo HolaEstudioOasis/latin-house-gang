@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
 }
 
-.nav-logo img { height: 28px; width: auto; display: block; }
+.nav-logo img { height: 32px; width: auto; display: block; }
 .nav-logo-text {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
@@ -136,7 +136,7 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 .hero-inner { padding: 0 24px; }
-.hero-logo-img { height: 60px; width: auto; margin: 0 auto 12px; }
+.hero-logo-img { height: 80px; width: auto; max-width: 600px; margin: 0 auto 16px; display: block; }
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 96px;

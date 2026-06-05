@@ -65,7 +65,7 @@ const releases = [
   {
     catalog: "LHG #028", title: "Barranquilla", artist: "Jayie · MichaelBM · Vika", year: "2026",
     coverUrl: "/covers/BARRANQUILLA_cover.jpg",
-    appleUrl: "#",
+    appleUrl: "https://music.apple.com/mx/album/barranquilla-single/1889300875",
     spotifyUrl: "https://open.spotify.com/intl-es/album/1xGLKYqMuN7Cm37vL1XxBv"
   },
   {
