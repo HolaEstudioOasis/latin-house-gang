@@ -3,21 +3,22 @@ const LHG_SPOTIFY   = "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYF
 const LHG_INSTAGRAM = "https://www.instagram.com/latinhousegangmusic/";
 
 // ─── ARTISTS ────────────────────────────────────────────
+// Note: instagram null/# = no confirmed IG → icon is hidden
 const artists = [
   { name: "MichaelBM",      aliases: ["Michael"],
     instagram: "https://www.instagram.com/michaelbmmusic/",
-    spotify:   "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H",
+    spotify:   "https://open.spotify.com/intl-es/artist/6RY7vqzR938x0DE0Eh6srl",
     apple:     "https://music.apple.com/mx/artist/michaelbm/1016031177" },
   { name: "Bautista",       aliases: [],
     instagram: "https://www.instagram.com/bautista.wav/",
     spotify:   "https://open.spotify.com/intl-es/artist/5oryDmGJCySSpMFY9YUeb1",
     apple:     "https://music.apple.com/mx/artist/bautista/1533307995" },
   { name: "Cele Arrabal",   aliases: [],
-    instagram: null,
-    spotify:   "https://open.spotify.com/intl-es/artist/6RY7vqzR938x0DE0Eh6srl",
+    instagram: null,   // no IG confirmed — icon hidden
+    spotify:   "https://open.spotify.com/intl-es/artist/36GC5ob1mWpu07UpvMAYnl",
     apple:     "https://music.apple.com/mx/artist/cele-arrabal/1515168401" },
   { name: "Paskman",        aliases: [],
-    instagram: null,
+    instagram: null,   // no IG confirmed — icon hidden
     spotify:   "https://open.spotify.com/intl-es/artist/53WBL9mWs6KRVyrWBB6Fen",
     apple:     "https://music.apple.com/mx/artist/paskman/1449989316" },
   { name: "Minow",          aliases: [],
@@ -30,7 +31,7 @@ const artists = [
     apple:     "https://music.apple.com/mx/artist/boltron/1535833423" },
   { name: "Gama",           aliases: [],
     instagram: "https://www.instagram.com/gamamusicmx/",
-    spotify:   "https://open.spotify.com/intl-es/artist/36GC5ob1mWpu07UpvMAYnl",
+    spotify:   "https://open.spotify.com/intl-es/artist/4z5hE5cqCfTsCZ60IVAgRC",
     apple:     "https://music.apple.com/mx/artist/gama/193501778" },
   { name: "House Music Bro",aliases: [],
     instagram: "https://www.instagram.com/housemusicbro/",
@@ -54,22 +55,36 @@ function getArtistLink(name, type) {
 
 // ─── DATA — RELEASES ────────────────────────────────────
 const releases = [
+  // ── NUEVOS con portadas reales (archivos locales) ──
   {
-    catalog: "LHG #028", title: "Latin House Gang Vol.4", artist: "Various Artists", year: "2026",
+    catalog: "LHG #029", title: "Britney", artist: "Cele Arrabal", year: "2026",
+    coverUrl: "/covers/BRITNEY_cover.jpg",
+    appleUrl: "https://music.apple.com/mx/album/britney-single/1886458544",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/2waAf6LbGfTHBWgd5KChKE"
+  },
+  {
+    catalog: "LHG #028", title: "Barranquilla", artist: "Jayie · MichaelBM · Vika", year: "2026",
+    coverUrl: "/covers/BARRANQUILLA_cover.jpg",
+    appleUrl: "#",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/1xGLKYqMuN7Cm37vL1XxBv"
+  },
+  {
+    catalog: "LHG #023", title: "Popper (Alta Gama)", artist: "MichaelBM · Freenzy · Barbara Doza", year: "2025",
+    coverUrl: "/covers/POPPER_cover.jpg",
+    appleUrl: "https://music.apple.com/mx/album/popper-alta-gama-single/1856919367",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/3wZmJlW1xeFZMBcz6IQWaF"
+  },
+  // ── Con portada de Apple Music CDN ──
+  {
+    catalog: "LHG #027", title: "Latin House Gang Vol.4", artist: "Various Artists", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/4f/a5/e94fa523-1a34-89e4-95ef-2a78269ed494/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-4/1889233062",
     spotifyUrl: "https://open.spotify.com/intl-es/album/4yBJXYf5bAcrxcrYYgJBq0"
   },
   {
-    catalog: "LHG #027", title: "Ciempiés", artist: "Paskman", year: "2026",
+    catalog: "LHG #026", title: "Ciempiés", artist: "Paskman", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s-single/1884037374",
-    spotifyUrl: null
-  },
-  {
-    catalog: "LHG #026", title: "Perfect Alibi", artist: "Latin House Gang", year: "2026",
-    coverUrl: null, color: "#1A3A5C",
-    appleUrl: "https://music.apple.com/mx/album/perfect-alibi-single/1886864199",
     spotifyUrl: null
   },
   {
@@ -79,147 +94,46 @@ const releases = [
     spotifyUrl: null
   },
   {
-    catalog: "LHG #024", title: "Diabolica", artist: "Kofla, Rob Session, Marin", year: "2026",
+    catalog: "LHG #024", title: "Diabolica", artist: "Kofla · Rob Session · Marin", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/90/49/15/9049153d-a5d7-5f16-7c5c-60dcff61afaf/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/diabolica-single/1859209334",
-    spotifyUrl: null
-  },
-  {
-    catalog: "LHG #023", title: "Britney", artist: "Latin House Gang", year: "2026",
-    coverUrl: null, color: "#CC2020",
-    appleUrl: "https://music.apple.com/mx/album/britney-single/1886458544",
-    spotifyUrl: null
+    spotifyUrl: "https://open.spotify.com/intl-es/album/5FJdmzVzZDxrFWopCoyaaY"
   },
   {
     catalog: "LHG #022", title: "Latin House Gang Vol.3", artist: "Various Artists", year: "2025",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/33/34/48333404-8fe5-8acd-be8b-881129bef7c9/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-3/1848993532",
     spotifyUrl: "https://open.spotify.com/intl-es/album/65WNZY2whziZrGu3KOSump"
-  },
-  {
-    catalog: "LHG #021", title: "Coco", artist: "Latin House Gang", year: "2025",
-    coverUrl: null, color: "#1A6B6B",
-    appleUrl: "https://music.apple.com/mx/album/coco-single/1849441952",
-    spotifyUrl: null
-  },
-  {
-    catalog: "LHG #020", title: "Loca del Flow", artist: "Latin House Gang", year: "2025",
-    coverUrl: null, color: "#5C2D8A",
-    appleUrl: "https://music.apple.com/mx/album/loca-del-flow-single/1849439357",
-    spotifyUrl: null
   }
+  // "Perfect Alibi" eliminado del catálogo
 ];
 
+// Eventos en Toluca eliminados hasta tener fechas reales confirmadas
 const eventos = [
   {
-    id: "evento-1", slug: "lhg-fuego-toluca-jul26",
-    nombre: "LATIN HOUSE GANG: FUEGO",
-    fecha: "Sábado 12 Julio 2026", hora: "22:00 — 04:00",
-    venue: "Club Nocturno XO", direccion: "Av. Tecnológico 100, Toluca, México",
-    ciudad: "Toluca, México", precioDesde: 350, moneda: "MXN",
-    status: "upcoming", lugaresLimitados: true, flyer: null,
-    instagramArtistas: {
-      "Michael": "https://www.instagram.com/michaelbmmusic/",
-      "Cele Arrabal": "https://www.instagram.com/cele.arrabal/",
-      "Bautista": "https://www.instagram.com/bautista.wav/"
-    },
-    lineup: ["MichaelBM", "Bautista", "Cele Arrabal", "Minow"],
-    tickets: [
-      { tipo: "GENERAL ADMISSION", descripcion: "Acceso general al evento", precio: 350 },
-      { tipo: "VIP", descripcion: "Acceso VIP + área exclusiva", precio: 650 }
-    ]
-  },
-  {
-    id: "evento-2", slug: "underground-session-cdmx-jul26",
-    nombre: "UNDERGROUND SESSION VOL.4",
-    fecha: "Sábado 26 Julio 2026", hora: "23:00 — 06:00",
+    id: "evento-1",
+    nombre: "UNDERGROUND SESSION VOL.3",
+    fecha: "Sábado 26 Julio 2025", hora: "23:00 — 06:00",
     venue: "El Bunker", direccion: "Col. Doctores, CDMX, México",
-    ciudad: "CDMX, México", precioDesde: 250, moneda: "MXN",
+    ciudad: "CDMX, México", precioDesde: 280, moneda: "MXN",
     status: "upcoming", lugaresLimitados: false, flyer: null,
-    instagramArtistas: {
-      "Minow": "https://www.instagram.com/minowmusic/",
-      "Gama": "https://www.instagram.com/gamamusicmx/",
-      "Boltron": "https://www.instagram.com/boltronmusic/"
-    },
-    lineup: ["Minow", "Gama", "Boltron"],
+    lineup: ["Minow", "Gama"],
     tickets: [
-      { tipo: "EARLY BIRD", descripcion: "Preventa limitada", precio: 150 },
-      { tipo: "GENERAL", descripcion: "Acceso general", precio: 250 }
+      { tipo: "EARLY BIRD", descripcion: "Preventa limitada", precio: 180 },
+      { tipo: "GENERAL",    descripcion: "Acceso general",    precio: 280 }
     ]
   },
   {
-    id: "evento-3", slug: "arrabal-open-air-ago26",
-    nombre: "ARRABAL OPEN AIR",
-    fecha: "Sábado 8 Agosto 2026", hora: "21:00 — 05:00",
-    venue: "Parque Industrial La Mora", direccion: "Av. Solidaridad, Toluca, México",
-    ciudad: "Toluca, México", precioDesde: 400, moneda: "MXN",
-    status: "upcoming", lugaresLimitados: false, flyer: null,
-    instagramArtistas: {
-      "Cele Arrabal": "https://www.instagram.com/cele.arrabal/",
-      "Boltron": "https://www.instagram.com/boltronmusic/",
-      "Michael": "https://www.instagram.com/michaelbmmusic/"
-    },
-    lineup: ["Cele Arrabal", "Boltron", "Michael"],
-    tickets: [
-      { tipo: "GENERAL", descripcion: "Acceso general", precio: 400 },
-      { tipo: "VIP TABLE", descripcion: "Mesa VIP para 4 personas", precio: 2800 }
-    ]
-  },
-  {
-    id: "evento-4", slug: "lhg-showcase-gdl-ago26",
-    nombre: "LHG SHOWCASE GDL",
-    fecha: "Sábado 22 Agosto 2026", hora: "22:00 — 05:00",
+    id: "evento-2",
+    nombre: "LHG SHOWCASE",
+    fecha: "Sábado 23 Agosto 2025", hora: "22:00 — 05:00",
     venue: "Foro 45", direccion: "Av. Américas 1254, Guadalajara, Jalisco",
     ciudad: "Guadalajara, México", precioDesde: 320, moneda: "MXN",
     status: "upcoming", lugaresLimitados: true, flyer: null,
-    instagramArtistas: {
-      "Michael": "https://www.instagram.com/michaelbmmusic/",
-      "Bautista": "https://www.instagram.com/bautista.wav/",
-      "Gama": "https://www.instagram.com/gamamusicmx/",
-      "Minow": "https://www.instagram.com/minowmusic/"
-    },
-    lineup: ["Michael", "Bautista", "Gama", "Minow"],
+    lineup: ["MichaelBM", "Bautista", "Gama", "Minow"],
     tickets: [
       { tipo: "PREVENTA", descripcion: "Precio de preventa", precio: 320 },
-      { tipo: "TAQUILLA", descripcion: "Precio en puerta", precio: 450 }
-    ]
-  },
-  {
-    id: "evento-5", slug: "noche-latina-mty-sep26",
-    nombre: "NOCHE LATINA",
-    fecha: "Viernes 11 Septiembre 2026", hora: "22:00 — 05:00",
-    venue: "Café Iguana", direccion: "Monterrey, Nuevo León, México",
-    ciudad: "Monterrey, México", precioDesde: 280, moneda: "MXN",
-    status: "upcoming", lugaresLimitados: false, flyer: null,
-    instagramArtistas: {
-      "Bautista": "https://www.instagram.com/bautista.wav/",
-      "Cele Arrabal": "https://www.instagram.com/cele.arrabal/"
-    },
-    lineup: ["Bautista", "Cele Arrabal"],
-    tickets: [
-      { tipo: "EARLY BIRD", descripcion: "Preventa limitada", precio: 180 },
-      { tipo: "GENERAL", descripcion: "Acceso general", precio: 280 }
-    ]
-  },
-  {
-    id: "evento-6", slug: "lhg-vol5-cdmx-oct26",
-    nombre: "LHG VOL.5 SHOWCASE",
-    fecha: "Sábado 3 Octubre 2026", hora: "22:00 — 06:00",
-    venue: "Foro Indie Rocks!", direccion: "Col. Doctores, CDMX, México",
-    ciudad: "CDMX, México", precioDesde: 350, moneda: "MXN",
-    status: "upcoming", lugaresLimitados: true, flyer: null,
-    instagramArtistas: {
-      "Michael": "https://www.instagram.com/michaelbmmusic/",
-      "Bautista": "https://www.instagram.com/bautista.wav/",
-      "Minow": "https://www.instagram.com/minowmusic/",
-      "Boltron": "https://www.instagram.com/boltronmusic/",
-      "Gama": "https://www.instagram.com/gamamusicmx/",
-      "Cele Arrabal": "https://www.instagram.com/cele.arrabal/"
-    },
-    lineup: ["Michael", "Bautista", "Minow", "Boltron", "Gama", "Cele Arrabal"],
-    tickets: [
-      { tipo: "GENERAL ADMISSION", descripcion: "Acceso general", precio: 350 },
-      { tipo: "VIP", descripcion: "Acceso VIP + área exclusiva", precio: 700 }
+      { tipo: "TAQUILLA", descripcion: "Precio en puerta",   precio: 450 }
     ]
   }
 ];
