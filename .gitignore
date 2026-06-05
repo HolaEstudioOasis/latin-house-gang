@@ -1,0 +1,16 @@
+# Dev server
+serve.ps1
+
+# Design files
+*.ai
+*.zip
+unnamed.webp
+LHG Logo.jpg
+
+# Claude Code internals
+.claude/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini

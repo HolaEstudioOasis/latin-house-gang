@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Latin House Gang</title>
+  <meta name="description" content="Noticias, lanzamientos y cultura de Latin House Gang.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="LHG_Logo_Negro_Banner.png" alt="Latin House Gang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="nav-logo-text" style="display:none">LATIN HOUSE GANG</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">RELEASES</a></li>
+        <li><a href="eventos.html">EVENTOS</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="submit.html">SUBMIT</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="https://www.instagram.com/latinhousegangmusic/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="SoundCloud">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M1.175 12.225c-.108 0-.196.088-.196.197l-.3 2.236.3 2.206c0 .109.088.197.196.197.11 0 .197-.088.197-.197l.338-2.206-.338-2.236c0-.109-.088-.197-.197-.197zm1.662-.613c-.12 0-.217.098-.217.218l-.27 2.828.27 2.77c0 .12.098.217.217.217.12 0 .218-.098.218-.217l.305-2.77-.305-2.828c0-.12-.097-.218-.218-.218zm1.69-.206c-.133 0-.24.107-.24.24l-.24 3.034.24 2.926c0 .132.107.24.24.24.132 0 .24-.108.24-.24l.273-2.926-.273-3.034c0-.133-.108-.24-.24-.24zm1.707-.075c-.145 0-.263.117-.263.263l-.21 3.109.21 2.869c0 .146.118.263.263.263.145 0 .263-.117.263-.263l.237-2.869-.237-3.109c0-.146-.118-.263-.263-.263zm1.72.088c-.157 0-.286.128-.286.286l-.18 3.021.18 2.783c0 .157.129.285.286.285.157 0 .285-.128.285-.285l.205-2.783-.205-3.021c0-.158-.128-.286-.285-.286zm1.733-.12c-.169 0-.307.138-.307.307l-.15 3.141.15 2.73c0 .169.138.308.307.308.17 0 .307-.139.307-.308l.17-2.73-.17-3.141c0-.169-.138-.307-.307-.307zm1.75-.072c-.183 0-.33.148-.33.33l-.12 3.213.12 2.696c0 .183.147.33.33.33.182 0 .33-.147.33-.33l.137-2.696-.137-3.213c0-.182-.148-.33-.33-.33zm1.766.072c-.194 0-.352.158-.352.352l-.09 3.141.09 2.641c0 .194.158.352.352.352.194 0 .352-.158.352-.352l.1-2.641-.1-3.141c0-.194-.158-.352-.352-.352zm1.78.047c-.205 0-.373.168-.373.374l-.061 3.094.061 2.574c0 .206.168.374.373.374.207 0 .374-.168.374-.374l.07-2.574-.07-3.094c0-.206-.167-.374-.374-.374zm3.504-.766c-.102-.038-.21-.059-.322-.059-.433 0-.8.261-.978.641-.2-.86-.975-1.5-1.9-1.5-.26 0-.507.053-.734.15-.084.032-.107.065-.108.097v7.354c.001.034.027.062.062.068h4.08c.37 0 .672-.3.672-.672V12.1c0-1.063-.712-1.961-1.772-2.101z"/>
+          </svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="index.html">RELEASES</a>
+    <a href="eventos.html">EVENTOS</a>
+    <a href="blog.html">BLOG</a>
+    <a href="submit.html">SUBMIT</a>
+    <div class="nav-mobile-icons">
+      <a href="https://www.instagram.com/latinhousegangmusic/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="container">
+    <div class="page-hero">
+      <h1 class="page-hero-title">BLOG</h1>
+      <p class="page-hero-sub">NOTICIAS · LANZAMIENTOS · CULTURA</p>
+    </div>
+
+    <!-- BLOG GRID -->
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="LHG_Logo_Blanco_Banner.png" alt="Latin House Gang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="footer-logo-text" style="display:none">LATIN HOUSE GANG</span>
+          <p class="footer-tagline">Electronic Music Label · Est. 2019 · Toluca, México</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html">RELEASES</a></li>
+          <li><a href="eventos.html">EVENTOS</a></li>
+          <li><a href="blog.html">BLOG</a></li>
+          <li><a href="submit.html">SUBMIT</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/latinhousegangmusic/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Latin House Gang. Todos los derechos reservados.</span>
+        <span class="footer-copy">LHG Records · Toluca, México</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
