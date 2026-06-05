@@ -123,7 +123,7 @@ const eventos = [
       "Cele Arrabal": "https://www.instagram.com/cele.arrabal/",
       "Bautista": "https://www.instagram.com/bautista.wav/"
     },
-    lineup: ["Michael", "Cele Arrabal", "Bautista"],
+    lineup: ["MichaelBM", "Bautista", "Cele Arrabal", "Minow"],
     tickets: [
       { tipo: "GENERAL ADMISSION", descripcion: "Acceso general al evento", precio: 350 },
       { tipo: "VIP", descripcion: "Acceso VIP + área exclusiva", precio: 650 }
@@ -231,7 +231,7 @@ function parseFecha(fechaStr) {
   const day = parseInt(parts[1]);
   const month = months[parts[2]];
   const year = parseInt(parts[3]);
-  return { day, monthName: parts[2].charAt(0).toUpperCase() + parts[2].slice(1), weekday: parts[0].charAt(0).toUpperCase() + parts[0].slice(1), year };
+  return { day, month, monthName: parts[2].charAt(0).toUpperCase() + parts[2].slice(1), weekday: parts[0].charAt(0).toUpperCase() + parts[0].slice(1), year };
 }
 
 // ─── SPOTIFY SVG ────────────────────────────────────────
@@ -476,15 +476,18 @@ function initModal() {
   const overlay = document.getElementById('ticketModal');
   if (!overlay) return;
 
-  overlay.querySelector('.modal-close').addEventListener('click', closeModal);
+  const closeBtn = document.getElementById('btnModalClose') || overlay.querySelector('.modal-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   const btnProceder = document.getElementById('btnProceder');
   if (btnProceder) {
     btnProceder.addEventListener('click', () => {
-      overlay.querySelector('.modal-content').style.display = 'none';
-      overlay.querySelector('.modal-confirm').style.display = 'block';
+      const s1 = document.getElementById('modalStep1') || overlay.querySelector('.modal-content');
+      const s2 = document.getElementById('modalStep2') || overlay.querySelector('.modal-confirm');
+      if (s1) s1.style.display = 'none';
+      if (s2) s2.style.display = 'block';
     });
   }
 
@@ -577,72 +580,70 @@ function initEventoDetalle() {
   document.title = `${evento.nombre} — Latin House Gang`;
 
   // Flyer
-  const flyerEl = document.querySelector('.flyer-event-name');
-  const flyerDate = document.querySelector('.flyer-event-date');
-  if (flyerEl) flyerEl.textContent = evento.nombre;
-  if (flyerDate) flyerDate.textContent = `${evento.fecha} · ${evento.hora}`;
+  const setEl = (sel, val) => { const el = document.getElementById(sel); if (el) el.textContent = val; };
+  setEl('edNombre', evento.nombre);
+  const f = parseFecha(evento.fecha);
+  const monthNums = {'enero':'01','febrero':'02','marzo':'03','abril':'04','mayo':'05','junio':'06','julio':'07','agosto':'08','septiembre':'09','octubre':'10','noviembre':'11','diciembre':'12'};
+  const partsF = evento.fecha.toLowerCase().split(' ');
+  const mmStr = monthNums[partsF[2]] || '??';
+  setEl('edFechaFlyer', `${String(f.day).padStart(2,'0')}.${mmStr}.${String(f.year).slice(2)} · ${evento.ciudad.toUpperCase()}`);
 
-  // Info
-  const nombre = document.querySelector('.evento-detalle-nombre');
-  if (nombre) nombre.textContent = evento.nombre;
+  // Marquee
+  const marquee = document.getElementById('edMarquee');
+  if (marquee) {
+    const txt = `${evento.nombre} &nbsp;·&nbsp; ${evento.fecha} &nbsp;·&nbsp; ${evento.venue} &nbsp;·&nbsp; ${evento.ciudad} &nbsp;·&nbsp;&nbsp;`;
+    marquee.innerHTML = `<span>${txt}</span><span>${txt}</span>`;
+  }
 
-  const badge = document.querySelector('.badge-lugares');
+  // Badge
+  const badge = document.getElementById('edBadge');
   if (badge) badge.style.display = evento.lugaresLimitados ? 'inline-block' : 'none';
 
-  const precioPrincipal = document.querySelector('.sticky-precio');
-  if (precioPrincipal) precioPrincipal.textContent = `Desde $${evento.precioDesde} MXN`;
+  // Title
+  setEl('edTitulo', evento.nombre);
 
-  const fechasSticky = document.querySelector('.sticky-fechas');
-  if (fechasSticky) fechasSticky.textContent = `${evento.fecha} · ${evento.hora}`;
+  // Org stats
+  setEl('edOrgStats', `· ${evento.ciudad} · desde 2019`);
 
-  // Venue
-  const venueName = document.querySelector('.venue-nombre');
-  const venueDirec = document.querySelector('.venue-direccion');
-  if (venueName) venueName.textContent = evento.venue;
-  if (venueDirec) venueDirec.textContent = evento.direccion;
+  // Sticky box
+  setEl('edPrecio', `Desde $${evento.precioDesde} ${evento.moneda}`);
+  setEl('edFechaSticky', `${f.monthName.slice(0,3)} ${f.day} · ${evento.hora}`);
 
-  // Fecha/hora
-  const fechaPrincipal = document.querySelector('.fecha-principal');
-  const fechaHorario = document.querySelector('.fecha-horario');
-  if (fechaPrincipal) fechaPrincipal.textContent = evento.fecha;
-  if (fechaHorario) fechaHorario.textContent = evento.hora;
+  // Venue & address
+  const addressParts = evento.direccion.split(',');
+  setEl('edVenue', evento.venue);
+  setEl('edDir1', addressParts[0]?.trim() || evento.direccion);
+  setEl('edDir2', addressParts.slice(1).join(',').trim() || evento.ciudad);
+
+  // Fecha/hora section
+  setEl('edFechaPrincipal', evento.fecha);
+  setEl('edHora', `${evento.hora} hrs`);
 
   // Lineup
-  const lineupGrid = document.querySelector('.lineup-grid');
+  const lineupGrid = document.getElementById('lineupGrid');
   if (lineupGrid) {
     lineupGrid.innerHTML = evento.lineup.map(a => {
       const igUrl = getArtistLink(a, 'instagram');
       const spUrl = getArtistLink(a, 'spotify');
       const apUrl = getArtistLink(a, 'apple');
-      const mainUrl = spUrl || apUrl || igUrl || '#';
+      const mainUrl = igUrl || spUrl || apUrl || '#';
       const socialIcons = [
         igUrl ? `<a href="${igUrl}" target="_blank" rel="noopener" aria-label="Instagram" class="artista-social-link" onclick="event.stopPropagation()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-        </a>` : '',
-        spUrl ? `<a href="${spUrl}" target="_blank" rel="noopener" aria-label="Spotify" class="artista-social-link" onclick="event.stopPropagation()">
-          ${SPOTIFY_SVG}
-        </a>` : '',
-        apUrl ? `<a href="${apUrl}" target="_blank" rel="noopener" aria-label="Apple Music" class="artista-social-link" onclick="event.stopPropagation()">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        </a>` : ''
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>` : '',
+        spUrl ? `<a href="${spUrl}" target="_blank" rel="noopener" aria-label="Spotify" class="artista-social-link" onclick="event.stopPropagation()">${SPOTIFY_SVG}</a>` : ''
       ].join('');
       return `
-        <a class="artista-card" href="${mainUrl}" target="_blank" rel="noopener" style="text-decoration:none">
-          <div class="artista-avatar">
-            <span class="artista-inicial">${a.charAt(0)}</span>
-          </div>
+        <div class="artista-card" onclick="window.open('${mainUrl}','_blank')" role="link" tabindex="0">
+          <div class="artista-avatar"><span class="artista-inicial">${a.charAt(0)}</span></div>
           <span class="artista-nombre">${a}</span>
-          <div class="artista-socials">${socialIcons}</div>
-        </a>
-      `;
+          <div class="artista-socials">${socialIcons}<span class="artista-arrow">›</span></div>
+        </div>`;
     }).join('');
   }
 
-  // Comprar tickets btn
-  const btnComprar = document.querySelector('.btn-comprar');
-  if (btnComprar) {
-    btnComprar.addEventListener('click', () => openModal(evento.id));
-  }
+  // Comprar tickets
+  const btnComprar = document.getElementById('btnComprar');
+  if (btnComprar) btnComprar.addEventListener('click', () => openModal(evento.id));
 }
 
 // ─── INIT ────────────────────────────────────────────────
@@ -659,7 +660,7 @@ function init() {
   initCalendario();
   initSubmitForm();
 
-  if (document.querySelector('.evento-detalle-flyer')) initEventoDetalle();
+  if (document.getElementById('edFlyer')) initEventoDetalle();
 }
 
 // Funciona tanto si el script carga antes como después del DOM

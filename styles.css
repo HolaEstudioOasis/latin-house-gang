@@ -1273,6 +1273,299 @@ img { display: block; max-width: 100%; }
   color: #fff;
 }
 
+/* ═══════════════════════════════════════════
+   EVENTO DETALLE — completo
+═══════════════════════════════════════════ */
+
+/* Breadcrumb */
+.ed-breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px 0;
+}
+.ed-back {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.ed-back:hover { color: var(--text); }
+
+/* ── FLYER ── */
+.ed-flyer {
+  width: 100%;
+  height: 400px;
+  background: #0A0A0A;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.ed-flyer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+.ed-flyer-nombre {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.ed-flyer-fecha {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 14px;
+  letter-spacing: 0.08em;
+}
+
+/* Marquee */
+.ed-marquee-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 11px 0;
+  background: #0A0A0A;
+  flex-shrink: 0;
+}
+.ed-marquee {
+  display: inline-block;
+  animation: marquee-scroll 18s linear infinite;
+}
+.ed-marquee span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.12em;
+}
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── BODY 2 COLUMNS ── */
+.ed-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 52px;
+  align-items: start;
+}
+.ed-left {}
+.ed-right {}
+
+/* Badge */
+.badge-lugares {
+  display: inline-block;
+  background: #FFF3CD;
+  color: #856404;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+/* Titulo */
+.ed-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+/* Organizer inline */
+.ed-org-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.ed-org-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ed-org-logo-img { width: 100%; height: 100%; object-fit: cover; }
+.ed-org-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ed-org-por { font-size: 14px; color: var(--muted); }
+.ed-org-por strong { color: var(--text); }
+.ed-org-stats {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Section spacing */
+.ed-section {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.ed-section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--text);
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+/* Fecha y Hora */
+.ed-fecha-principal {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.ed-fecha-hora {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* Ubicación grid */
+.ed-ubicacion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── ORGANIZER CARD (bottom section) ── */
+.ed-organizer-card {
+  background: var(--bg-alt);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ed-organizer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+.ed-organizer-avatar-big {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ed-org-big-img { width: 100%; height: 100%; object-fit: cover; }
+.ed-org-big-fallback {
+  display: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.ed-organizer-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-org-contacto {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  background: #F0EDE8;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px 22px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-org-contacto:hover { background: var(--border); }
+.btn-org-seguir {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-org-seguir:hover { background: #A01818; }
+
+/* ── STICKY BOX ── */
+.ed-sticky-box {
+  position: sticky;
+  top: 80px;
+  border: 1.5px solid var(--border);
+  padding: 24px;
+}
+.btn-seguir-ig {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-seguir-ig:hover { background: #A01818; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .ed-body { grid-template-columns: 1fr; }
+  .ed-sticky-box { position: static; }
+  .ed-flyer-nombre { font-size: 48px; }
+}
+@media (max-width: 600px) {
+  .ed-flyer { height: 280px; }
+  .ed-flyer-nombre { font-size: 36px; }
+  .ed-flyer-fecha { font-size: 13px; }
+  .ed-ubicacion-grid { grid-template-columns: 1fr; }
+  .ed-organizer-card { flex-direction: column; align-items: flex-start; }
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
