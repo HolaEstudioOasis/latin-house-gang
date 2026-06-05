@@ -78,7 +78,7 @@ img { display: block; max-width: 100%; }
 }
 .nav-icons a { color: var(--muted); transition: color 0.2s ease; display: flex; }
 .nav-icons a:hover { color: var(--accent); }
-.nav-icons svg { width: 20px; height: 20px; }
+.nav-icons svg { width: 24px; height: 24px; }
 
 .nav-hamburger {
   display: none;
