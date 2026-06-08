@@ -1,6 +1,10 @@
 // ─── SOCIAL LINKS ───────────────────────────────────────
-const LHG_SPOTIFY   = "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H";
-const LHG_INSTAGRAM = "https://www.instagram.com/latinhousegangmusic/";
+const LHG_INSTAGRAM  = "https://www.instagram.com/latinhousegangmusic/";
+const LHG_SPOTIFY    = "https://open.spotify.com/intl-es/artist/7L2xCq0Mc82JvdEYFydl9H";
+const LHG_APPLE      = "https://music.apple.com/mx/artist/latin-house-gang/1773443298";
+const LHG_YOUTUBE    = "https://www.youtube.com/channel/UCR5vibL8REsZgGjX4G1fMBQ";
+const LHG_SOUNDCLOUD = "https://soundcloud.com/latinhousegangmusic";
+const LHG_BEATPORT   = "https://www.beatport.com/es/label/latin-house-gang/125534";
 
 // ─── ARTISTS ────────────────────────────────────────────
 // Note: instagram null/# = no confirmed IG → icon is hidden
@@ -55,57 +59,62 @@ function getArtistLink(name, type) {
 
 // ─── DATA — RELEASES ────────────────────────────────────
 const releases = [
-  // ── NUEVOS con portadas reales (archivos locales) ──
   {
     catalog: "LHG #029", title: "Britney", artist: "Cele Arrabal", year: "2026",
     coverUrl: "/covers/BRITNEY_cover.jpg",
     appleUrl: "https://music.apple.com/mx/album/britney-single/1886458544",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/2waAf6LbGfTHBWgd5KChKE"
+    spotifyUrl: "https://open.spotify.com/intl-es/album/2waAf6LbGfTHBWgd5KChKE",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
   {
     catalog: "LHG #028", title: "Barranquilla", artist: "Jayie · MichaelBM · Vika", year: "2026",
     coverUrl: "/covers/BARRANQUILLA_cover.jpg",
     appleUrl: "https://music.apple.com/mx/album/barranquilla-single/1889300875",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/1xGLKYqMuN7Cm37vL1XxBv"
+    spotifyUrl: "https://open.spotify.com/intl-es/album/1xGLKYqMuN7Cm37vL1XxBv",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
-  {
-    catalog: "LHG #023", title: "Popper (Alta Gama)", artist: "MichaelBM · Freenzy · Barbara Doza", year: "2025",
-    coverUrl: "/covers/POPPER_cover.jpg",
-    appleUrl: "https://music.apple.com/mx/album/popper-alta-gama-single/1856919367",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/3wZmJlW1xeFZMBcz6IQWaF"
-  },
-  // ── Con portada de Apple Music CDN ──
   {
     catalog: "LHG #027", title: "Latin House Gang Vol.4", artist: "Various Artists", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/4f/a5/e94fa523-1a34-89e4-95ef-2a78269ed494/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-4/1889233062",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/4yBJXYf5bAcrxcrYYgJBq0"
+    spotifyUrl: "https://open.spotify.com/intl-es/album/4yBJXYf5bAcrxcrYYgJBq0",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
   {
     catalog: "LHG #026", title: "Ciempiés", artist: "Paskman", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s-single/1884037374",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/64lEVztoenFon4IPHRR4Pp"
+    spotifyUrl: "#",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
   {
     catalog: "LHG #025", title: "Lover", artist: "Bautista", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/7a/32/747a3273-994d-0989-40bf-e2f7867668d1/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/lover-single/1874009473",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/0cIk6DGPJ4rXRcZeIO7yUE"
+    spotifyUrl: "#",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
   {
     catalog: "LHG #024", title: "Diabolica", artist: "Kofla · Rob Session · Marin", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/90/49/15/9049153d-a5d7-5f16-7c5c-60dcff61afaf/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/diabolica-single/1859209334",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/5FJdmzVzZDxrFWopCoyaaY"
+    spotifyUrl: "https://open.spotify.com/intl-es/album/5FJdmzVzZDxrFWopCoyaaY",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+  },
+  {
+    catalog: "LHG #023", title: "Popper (Alta Gama)", artist: "MichaelBM · Freenzy · Barbara Doza", year: "2025",
+    coverUrl: "/covers/POPPER_cover.jpg",
+    appleUrl: "https://music.apple.com/mx/album/popper-alta-gama-single/1856919367",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/3wZmJlW1xeFZMBcz6IQWaF",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   },
   {
     catalog: "LHG #022", title: "Latin House Gang Vol.3", artist: "Various Artists", year: "2025",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/33/34/48333404-8fe5-8acd-be8b-881129bef7c9/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-3/1848993532",
-    spotifyUrl: "https://open.spotify.com/intl-es/album/65WNZY2whziZrGu3KOSump"
+    spotifyUrl: "https://open.spotify.com/intl-es/album/65WNZY2whziZrGu3KOSump",
+    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
   }
-  // "Perfect Alibi" eliminado del catálogo
 ];
 
 // Eventos anteriores eliminados hasta tener fechas reales confirmadas
@@ -148,13 +157,28 @@ function parseFecha(fechaStr) {
   return { day, month, monthName: parts[2].charAt(0).toUpperCase() + parts[2].slice(1), weekday: parts[0].charAt(0).toUpperCase() + parts[0].slice(1), year };
 }
 
-// ─── SPOTIFY SVG ────────────────────────────────────────
-const SPOTIFY_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>`;
+// ─── SOCIAL SVGs ────────────────────────────────────────
+const SPOTIFY_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>`;
+const APPLE_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`;
+const YOUTUBE_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.376-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`;
+const SOUNDCLOUD_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M1.175 12.225c-.016 0-.024.01-.024.025l.435 2.716-.435 2.7c0 .014.008.024.024.024s.024-.01.024-.025l.484-2.7-.484-2.716c0-.014-.008-.024-.024-.024zm.966-.69c-.02 0-.03.012-.03.03l-.395 3.405.395 3.36c0 .018.01.03.03.03s.03-.012.03-.03l.446-3.36-.446-3.404c0-.018-.012-.03-.03-.03zm1.003-.395c-.022 0-.04.017-.04.038L2.72 15l.384 3.338c0 .022.018.038.04.038s.04-.016.04-.038L3.578 15l-.434-3.822c0-.022-.018-.038-.04-.038zm1.066-.23c-.024 0-.044.02-.044.044L3.83 15l.336 3.142c0 .024.02.044.044.044s.044-.02.044-.044L4.59 15l-.38-3.146c0-.024-.02-.044-.044-.044zm1.033-.184c-.026 0-.048.022-.048.048L4.86 15l.335 3.08c0 .026.022.048.048.048s.048-.022.048-.048L5.627 15l-.384-3.226c0-.026-.022-.048-.048-.048zM8.5 9c-.55 0-1.077.1-1.563.28C6.56 7.97 5.2 7 3.6 7 1.612 7 0 8.612 0 10.6v.05C0 12.478 1.343 14 3 14h.5v.01H16c1.657 0 3-1.343 3-3a3 3 0 00-3-3c-.16 0-.317.013-.471.038A4.5 4.5 0 008.5 9z"/></svg>`;
 
-function initSpotifyIcons() {
-  const link = `<a href="${LHG_SPOTIFY}" target="_blank" rel="noopener" aria-label="Spotify en Spotify">${SPOTIFY_SVG}</a>`;
-  document.querySelectorAll('.nav-icons, .footer-social, .nav-mobile-icons').forEach(el => {
-    el.insertAdjacentHTML('beforeend', link);
+function initSocialIcons() {
+  const spotifyLink = `<a href="${LHG_SPOTIFY}" target="_blank" rel="noopener" aria-label="Spotify">${SPOTIFY_SVG}</a>`;
+  const beatportLink = `<a href="${LHG_BEATPORT}" target="_blank" rel="noopener" aria-label="Beatport" style="display:flex;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#01FF95;letter-spacing:0.05em;">BP</span></a>`;
+
+  document.querySelectorAll('.nav-icons, .nav-mobile-icons').forEach(el => {
+    el.insertAdjacentHTML('beforeend', spotifyLink + beatportLink);
+  });
+
+  document.querySelectorAll('.footer-social').forEach(el => {
+    el.insertAdjacentHTML('beforeend',
+      spotifyLink +
+      `<a href="${LHG_APPLE}" target="_blank" rel="noopener" aria-label="Apple Music">${APPLE_SVG}</a>` +
+      `<a href="${LHG_YOUTUBE}" target="_blank" rel="noopener" aria-label="YouTube">${YOUTUBE_SVG}</a>` +
+      `<a href="${LHG_SOUNDCLOUD}" target="_blank" rel="noopener" aria-label="SoundCloud">${SOUNDCLOUD_SVG}</a>` +
+      beatportLink
+    );
   });
 }
 
@@ -212,10 +236,14 @@ function renderReleases(containerId, limit) {
            <span class="cover-letter">${r.title.charAt(0)}</span>
          </div>`;
 
-    const spBtn = r.spotifyUrl
+    const spBtn = (r.spotifyUrl && r.spotifyUrl !== '#')
       ? `<a href="${r.spotifyUrl}" target="_blank" rel="noopener" class="overlay-btn overlay-btn-spotify" onclick="event.stopPropagation()">
            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
            SPOTIFY
+         </a>` : '';
+    const bpBtn = r.beatportUrl
+      ? `<a href="${r.beatportUrl}" target="_blank" rel="noopener" class="overlay-btn overlay-btn-beatport" onclick="event.stopPropagation()">
+           BEATPORT
          </a>` : '';
 
     return `
@@ -228,6 +256,7 @@ function renderReleases(containerId, limit) {
               APPLE MUSIC
             </a>
             ${spBtn}
+            ${bpBtn}
           </div>
         </div>
         <div class="release-info">
@@ -237,6 +266,36 @@ function renderReleases(containerId, limit) {
         </div>
       </div>`;
   }).join('');
+}
+
+// ─── SETS ───────────────────────────────────────────────
+const sets = [
+  { title: "Latin House Gang · CDMX", views: "147K views", youtubeId: "ngEGJ63LBlA" },
+  { title: "Latin House Gang · Live Set", views: "120K views", youtubeId: "CZbHFXEM7a8" },
+  { title: "MichaelBM · R.I.O. Shine On Remix", views: "más vistas", youtubeId: "FjzbdD8FqTQ" },
+  { title: "Latin House Gang · Último Set", views: "14K views", youtubeId: "4yEQl4cv2Oo" }
+];
+
+function renderSets(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = sets.map(s => `
+    <div class="set-card">
+      <div class="set-embed">
+        <iframe
+          src="https://www.youtube.com/embed/${s.youtubeId}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="set-info">
+        <p class="set-title">${s.title}</p>
+        <p class="set-views">${s.views}</p>
+      </div>
+    </div>
+  `).join('');
 }
 
 // ─── BLOG GRID ──────────────────────────────────────────
@@ -563,11 +622,12 @@ function initEventoDetalle() {
 // ─── INIT ────────────────────────────────────────────────
 function init() {
   initNavbar();
-  renderReleases('releasesGridHome', 9);  // home: todos los releases
+  renderReleases('releasesGridHome', 9);
+  renderSets('setsGrid');
   renderBlog('blogGrid');
   renderEventos('eventosListHome', 3);
   renderEventos('eventosListPage', null);
-  initSpotifyIcons();
+  initSocialIcons();
   initModal();
   initGuardarEvento();
   initFollowBtns();
