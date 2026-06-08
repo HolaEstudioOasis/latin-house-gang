@@ -84,14 +84,14 @@ const releases = [
     catalog: "LHG #026", title: "Ciempiés", artist: "Paskman", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s/1884037374?i=1884037375",
-    spotifyUrl: "#",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/64lEVztoenFon4IPHRR4Pp",
     beatportUrl: "https://www.beatport.com/es/release/ciempies/6421561"
   },
   {
     catalog: "LHG #025", title: "Lover", artist: "Bautista", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/7a/32/747a3273-994d-0989-40bf-e2f7867668d1/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/lover/1874009473?i=1874009474",
-    spotifyUrl: "#",
+    spotifyUrl: "https://open.spotify.com/intl-es/album/0cIk6DGPJ4rXRcZeIO7yUE",
     beatportUrl: "https://www.beatport.com/es/release/lover/5879574"
   },
   {
