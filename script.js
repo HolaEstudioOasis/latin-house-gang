@@ -64,56 +64,56 @@ const releases = [
     coverUrl: "/covers/BRITNEY_cover.jpg",
     appleUrl: "https://music.apple.com/mx/album/britney-single/1886458544",
     spotifyUrl: "https://open.spotify.com/intl-es/album/2waAf6LbGfTHBWgd5KChKE",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/britney/6490527"
   },
   {
     catalog: "LHG #028", title: "Barranquilla", artist: "Jayie · MichaelBM · Vika", year: "2026",
     coverUrl: "/covers/BARRANQUILLA_cover.jpg",
     appleUrl: "https://music.apple.com/mx/album/barranquilla-single/1889300875",
     spotifyUrl: "https://open.spotify.com/intl-es/album/1xGLKYqMuN7Cm37vL1XxBv",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/barranquilla-extended-mix/6755066"
   },
   {
     catalog: "LHG #027", title: "Latin House Gang Vol.4", artist: "Various Artists", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/4f/a5/e94fa523-1a34-89e4-95ef-2a78269ed494/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-4/1889233062",
     spotifyUrl: "https://open.spotify.com/intl-es/album/4yBJXYf5bAcrxcrYYgJBq0",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/latin-house-gang-vol4/6725451"
   },
   {
     catalog: "LHG #026", title: "Ciempiés", artist: "Paskman", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/1f/ac/d21fac81-3c72-fc41-fffd-de8613386069/cover.jpg/600x600bf-60.jpg",
-    appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s-single/1884037374",
+    appleUrl: "https://music.apple.com/mx/album/ciempi%C3%A9s/1884037374?i=1884037375",
     spotifyUrl: "#",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/ciempies/6421561"
   },
   {
     catalog: "LHG #025", title: "Lover", artist: "Bautista", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/7a/32/747a3273-994d-0989-40bf-e2f7867668d1/cover.jpg/600x600bf-60.jpg",
-    appleUrl: "https://music.apple.com/mx/album/lover-single/1874009473",
+    appleUrl: "https://music.apple.com/mx/album/lover/1874009473?i=1874009474",
     spotifyUrl: "#",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/lover/5879574"
   },
   {
     catalog: "LHG #024", title: "Diabolica", artist: "Kofla · Rob Session · Marin", year: "2026",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/90/49/15/9049153d-a5d7-5f16-7c5c-60dcff61afaf/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/diabolica-single/1859209334",
     spotifyUrl: "https://open.spotify.com/intl-es/album/5FJdmzVzZDxrFWopCoyaaY",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/diabolica/5689482"
   },
   {
     catalog: "LHG #023", title: "Popper (Alta Gama)", artist: "MichaelBM · Freenzy · Barbara Doza", year: "2025",
     coverUrl: "/covers/POPPER_cover.jpg",
     appleUrl: "https://music.apple.com/mx/album/popper-alta-gama-single/1856919367",
     spotifyUrl: "https://open.spotify.com/intl-es/album/3wZmJlW1xeFZMBcz6IQWaF",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/popper-alta-gama/5660029"
   },
   {
     catalog: "LHG #022", title: "Latin House Gang Vol.3", artist: "Various Artists", year: "2025",
     coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/33/34/48333404-8fe5-8acd-be8b-881129bef7c9/cover.jpg/600x600bf-60.jpg",
     appleUrl: "https://music.apple.com/mx/album/latin-house-gang-vol-3/1848993532",
     spotifyUrl: "https://open.spotify.com/intl-es/album/65WNZY2whziZrGu3KOSump",
-    beatportUrl: "https://www.beatport.com/es/label/latin-house-gang/125534"
+    beatportUrl: "https://www.beatport.com/es/release/latin-house-gang-vol3/5540502"
   }
 ];
 
