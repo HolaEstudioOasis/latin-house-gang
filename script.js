@@ -165,10 +165,11 @@ const SOUNDCLOUD_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" 
 
 function initSocialIcons() {
   const spotifyLink = `<a href="${LHG_SPOTIFY}" target="_blank" rel="noopener" aria-label="Spotify">${SPOTIFY_SVG}</a>`;
-  const beatportLink = `<a href="${LHG_BEATPORT}" target="_blank" rel="noopener" aria-label="Beatport" style="display:flex;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#01FF95;letter-spacing:0.05em;">BP</span></a>`;
+  const scLink = `<a href="${LHG_SOUNDCLOUD}" target="_blank" rel="noopener" aria-label="SoundCloud"><img src="/icons/soundcloud.png" alt="SoundCloud" class="social-logo" style="height:20px;width:auto;display:block;"></a>`;
+  const bpLink = `<a href="${LHG_BEATPORT}" target="_blank" rel="noopener" aria-label="Beatport"><img src="/icons/beatport.png" alt="Beatport" class="social-logo" style="height:20px;width:auto;display:block;"></a>`;
 
   document.querySelectorAll('.nav-icons, .nav-mobile-icons').forEach(el => {
-    el.insertAdjacentHTML('beforeend', spotifyLink + beatportLink);
+    el.insertAdjacentHTML('beforeend', spotifyLink + bpLink);
   });
 
   document.querySelectorAll('.footer-social').forEach(el => {
@@ -176,8 +177,8 @@ function initSocialIcons() {
       spotifyLink +
       `<a href="${LHG_APPLE}" target="_blank" rel="noopener" aria-label="Apple Music">${APPLE_SVG}</a>` +
       `<a href="${LHG_YOUTUBE}" target="_blank" rel="noopener" aria-label="YouTube">${YOUTUBE_SVG}</a>` +
-      `<a href="${LHG_SOUNDCLOUD}" target="_blank" rel="noopener" aria-label="SoundCloud">${SOUNDCLOUD_SVG}</a>` +
-      beatportLink
+      scLink +
+      bpLink
     );
   });
 }

@@ -126,6 +126,24 @@ img { display: block; max-width: 100%; }
 .nav-mobile-icons a:hover { color: var(--accent); }
 .nav-mobile-icons svg { width: 20px; height: 20px; }
 
+/* ── Logo images in nav (dark logo on white bg) ── */
+.nav-icons .social-logo, .nav-mobile-icons .social-logo {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.nav-icons a:hover .social-logo, .nav-mobile-icons a:hover .social-logo {
+  opacity: 1;
+}
+/* ── Logo images in footer (invert to white on dark bg) ── */
+.footer-social .social-logo {
+  filter: invert(1);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.footer-social a:hover .social-logo {
+  opacity: 1;
+}
+
 /* ─── HERO HOME ─── */
 .hero {
   position: relative;
